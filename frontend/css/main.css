@@ -1,0 +1,345 @@
+:root {
+  --cream: #f5f1e8;
+  --beige: #e8dcc4;
+  --warm-brown: #8b7355;
+  --dark-brown: #5c4a3a;
+  --accent: #a67c52;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--cream);
+  font-family: "Times New Roman", serif;
+  color: var(--dark-brown);
+  margin: 0;
+  padding: 0;
+}
+
+/* ========== NAVIGATION ========== */
+nav {
+  background: var(--white);
+  padding: 1rem 2rem;
+  border-bottom: 2px solid var(--beige);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--warm-brown);
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+#auth-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+#user-welcome {
+  color: var(--dark-brown);
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+}
+/* ========== DROPDOWN ========== */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  margin-top: 0.5rem;
+  background: var(--white);
+  border: 2px solid var(--beige);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-width: 150px;
+  z-index: 1000;
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+.dropdown-menu button {
+  width: 100%;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  background: transparent;
+  color: var(--dark-brown);
+  border: none;
+  border-radius: 0;
+  font-size: 1rem;
+}
+
+.dropdown-menu button:hover {
+  background: var(--beige);
+  color: var(--dark-brown);
+}
+
+/* ========== CONTAINERS ========== */
+.container {
+  margin-top: 0.5rem;
+  max-width: 1200px;
+}
+section {
+  margin-bottom: 3rem;
+}
+
+/* ========== EQUAL HEIGHT CARDS ========== */
+.card-equal-height {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ========== CARDS ========== */
+article {
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(139, 115, 85, 0.1);
+  border: 1px solid var(--beige);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+article:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(139, 115, 85, 0.15);
+}
+
+.sprint-card h3 {
+  color: var(--dark-brown);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.sprint-card p {
+  color: var(--warm-brown);
+  margin: 0.5rem 0;
+}
+
+/* ========== QUOTE TEXT ========== */
+.quote-text {
+  font-style: italic;
+  color: var(--warm-brown);
+  line-height: 1.6;
+}
+
+/* ========== BUTTONS ========== */
+button {
+  background-color: var(--warm-brown);
+  color: var(--white);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+}
+
+button:hover {
+  background-color: var(--dark-brown);
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* ========== FORMS ========== */
+input,
+select {
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border: 2px solid var(--beige);
+  border-radius: 8px;
+  font-family: "Times New Roman", serif;
+  font-size: 1rem;
+  background: var(--white);
+  color: var(--dark-brown);
+  transition: border-color 0.3s;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--warm-brown);
+}
+
+input::placeholder {
+  color: #999;
+}
+
+/* ========== LOCATION TOGGLE ========== */
+.location-toggle {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.location-toggle label {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: var(--white);
+  border: 2px solid var(--beige);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.location-toggle label:hover {
+  border-color: var(--warm-brown);
+  background: var(--beige);
+}
+
+.location-toggle input[type="radio"] {
+  width: auto;
+  margin: 0;
+}
+
+.location-toggle label:has(input:checked) {
+  background: var(--beige);
+  border-color: var(--warm-brown);
+}
+
+/* ========== TIME INPUTS ========== */
+.time-inputs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.time-inputs input {
+  width: 33%;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+/* ========== AUTH FORMS ========== */
+.auth-form {
+  max-width: 450px;
+  margin: 0 auto;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.auth-form h1 {
+  color: var(--dark-brown);
+  margin-bottom: 2rem;
+}
+
+.auth-form input {
+  padding: 1.2rem;
+}
+
+.auth-form button {
+  padding: 1.2rem;
+  margin-top: 1rem;
+}
+
+.auth-form p {
+  margin-top: 1.5rem;
+  color: var(--warm-brown);
+}
+
+.auth-form a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.auth-form a:hover {
+  text-decoration: underline;
+}
+
+/* ========== HEADINGS ========== */
+h1,
+h2,
+h3 {
+  color: var(--dark-brown);
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  nav ul {
+    gap: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+}
+.date-time {
+  text-align: center;
+}
+
+.greeting {
+  text-align: center;
+}
+
+.create-sprint {
+  text-align: center;
+}
+.location-toggle input[type="radio"]:checked {
+  accent-color: var(--warm-brown);
+}
+
+.filter-form input,
+.filter-form select,
+.filter-form button {
+  height: 50px;
+  padding: 0.75rem;
+}
