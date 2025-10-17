@@ -24,6 +24,13 @@ body {
   color: #2c3e50;
 }
 
+.auth-form {
+  position: static !important;
+  transform: none !important;
+  margin: 120px auto 0 auto !important;
+}
+
+
 .subtitle {
   color: #666;
   margin-bottom: 2rem;
