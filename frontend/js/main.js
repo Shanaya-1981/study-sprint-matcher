@@ -1,5 +1,7 @@
 import { quotes } from "./quotes.js";
 
+const API_URL = 'https://study-sprint-matcher.onrender.com';
+
 // ==================== AUTH CHECK ====================
 const username = localStorage.getItem("username");
 
@@ -134,7 +136,7 @@ if (sprintForm) {
       participants: 1,
     };
 
-    await fetch("http://localhost:3000/api/sprints", {
+    await fetch(`${API_URL}/api/sprints`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(sprint),
@@ -147,7 +149,7 @@ if (sprintForm) {
 
 async function loadHomeSprints() {
   try {
-    const response = await fetch("http://localhost:3000/api/sprints");
+    const response = await fetch(`${API_URL}/api/sprints`);
     const sprints = await response.json();
     const container = document.getElementById("sprint-preview");
     if (!container) return;
@@ -195,7 +197,7 @@ async function loadMySprints() {
   if (!username) return;
 
   try {
-    const response = await fetch("http://localhost:3000/api/sprints");
+    const response = await fetch(`${API_URL}/api/sprints`);
     const sprints = await response.json();
 
     const createdSprints = sprints.filter((s) => s.username === username);
@@ -274,7 +276,7 @@ async function loadMySprints() {
 
 async function loadAllSprints() {
   try {
-    const response = await fetch("http://localhost:3000/api/sprints");
+    const response = await fetch(`${API_URL}/api/sprints`);
     const sprints = await response.json();
     displaySprints(sprints.slice(0, 6));
   } catch (error) {
@@ -322,7 +324,7 @@ if (filterForm) {
       .value.toLowerCase();
     const location = document.querySelector('select[name="location"]').value;
 
-    const response = await fetch("http://localhost:3000/api/sprints");
+    const response = await fetch(`${API_URL}/api/sprints`);
     const allSprints = await response.json();
 
     const filtered = allSprints.filter((sprint) => {
@@ -349,7 +351,7 @@ document.addEventListener("click", async (e) => {
       return;
     }
 
-    await fetch(`http://localhost:3000/api/sprints/${sprintId}/join`, {
+    await fetch(`${API_URL}/api/sprints/${sprintId}/join`, {
       method: "POST",
     });
 
@@ -366,7 +368,7 @@ document.addEventListener("click", async (e) => {
     const sprintCard = e.target.closest(".sprint-card");
     const sprintId = sprintCard.dataset.id;
 
-    await fetch(`http://localhost:3000/api/sprints/${sprintId}`, {
+    await fetch(`${API_URL}/api/sprints/${sprintId}`, {
       method: "DELETE",
     });
 
