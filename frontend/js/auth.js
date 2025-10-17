@@ -1,4 +1,4 @@
-const API_URL = 'https://study-sprint-matcher.onrender.com';
+const API_URL = "https://study-sprint-matcher.onrender.com";
 
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector("form");

@@ -1,6 +1,6 @@
 import { quotes } from "./quotes.js";
 
-const API_URL = 'https://study-sprint-matcher.onrender.com';
+const API_URL = "https://study-sprint-matcher.onrender.com";
 
 // ==================== AUTH CHECK ====================
 const username = localStorage.getItem("username");
