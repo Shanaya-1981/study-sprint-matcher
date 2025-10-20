@@ -118,8 +118,8 @@ Application runs on `http://localhost:3000`
 
 ## Deployment
 
-**Live Application:** [Vercel URL]  
-**Demo Video:** [Video URL]
+**Live Application:** [Vercel URL]https://study-sprint-matcher.onrender.com/
+**Demo Video:** [Video URL]https://youtu.be/_tp-mEFB-9w
 
 ## License
 
